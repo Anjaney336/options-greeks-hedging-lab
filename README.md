@@ -1,3 +1,5 @@
+> **Consolidated research, 24 October 2026:** The expanded version of this work is maintained in [derivatives-hedging-research](https://github.com/Anjaney336/derivatives-hedging-research), with a [research dashboard](https://anjaney336.github.io/portfolio/research/derivatives-hedging-research/). This repository preserves the earlier implementation and results.
+
 # Options Greeks & Hedging Lab
 
 **European option analytics, self-financing hedge accounting and held-out stress experiments.**
