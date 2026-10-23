@@ -1,0 +1,101 @@
+{
+  "dataset": "Synthetic diffusion and jump/regime scenarios; model-priced European calls",
+  "source_url": "https://github.com/Anjaney336/options-greeks-hedging-lab/blob/main/hedging.py",
+  "access_date": "2026-10-24",
+  "train_seeds": [
+    0,
+    49
+  ],
+  "heldout_seeds": [
+    1000,
+    1149
+  ],
+  "selected_band": 0.02,
+  "training_scores": {
+    "0.02": {
+      "n": 50,
+      "mean": -0.2796016206389211,
+      "rmse": 0.6889848630033355,
+      "worst_5pct_mean": -1.3014500386458547
+    },
+    "0.05": {
+      "n": 50,
+      "mean": -0.28164246631727574,
+      "rmse": 0.7266552826760515,
+      "worst_5pct_mean": -1.4134232675059601
+    },
+    "0.1": {
+      "n": 50,
+      "mean": -0.14178405381113374,
+      "rmse": 0.960419839603966,
+      "worst_5pct_mean": -1.800886407566868
+    }
+  },
+  "heldout_summary": {
+    "diffusion_none": {
+      "n": 150,
+      "mean": -0.4788251355058873,
+      "rmse": 7.035626655779845,
+      "worst_5pct_mean": -5.250640957463422
+    },
+    "diffusion_daily": {
+      "n": 150,
+      "mean": -0.21578883728645765,
+      "rmse": 0.5742250689786771,
+      "worst_5pct_mean": -1.5100187981755178
+    },
+    "diffusion_band": {
+      "n": 150,
+      "mean": -0.21966089865216465,
+      "rmse": 0.5758526075194045,
+      "worst_5pct_mean": -1.5152184962188262
+    },
+    "jump_none": {
+      "n": 150,
+      "mean": -0.9526577569922009,
+      "rmse": 7.5838818803495,
+      "worst_5pct_mean": -5.250640957463422
+    },
+    "jump_daily": {
+      "n": 150,
+      "mean": 1.6977959610454583,
+      "rmse": 2.944875489700103,
+      "worst_5pct_mean": -0.8604007558306668
+    },
+    "jump_band": {
+      "n": 150,
+      "mean": 1.7126640394291797,
+      "rmse": 2.9395047029966705,
+      "worst_5pct_mean": -0.8099694830068734
+    }
+  },
+  "trial_count": 900,
+  "units": "currency per one option on normalized spot 100, not account return",
+  "assumptions": {
+    "steps": 63,
+    "dt": 0.003968253968253968,
+    "pricing_vol": 0.25,
+    "financing_rate": 0.02,
+    "hedge_fee_bps": 5,
+    "initial_ATM": true,
+    "option_multiplier": 1,
+    "dividends": 0
+  },
+  "limits": "Idealized same-close analytic hedging; no option bid/ask, premium transaction fee, margin, tax, stock borrow fee or actual option quotes. Short stock is assumed available. Constant pricing IV under stochastic realized volatility is a stress assumption.",
+  "historical_underlying_replay": {
+    "source": "Yahoo Finance vendor-adjusted close cache from prior research",
+    "source_url": "https://finance.yahoo.com/quote/DLF.NS/history/",
+    "access_date": "2026-10-24",
+    "input_sha256": "1298ee925e4e8547aec0745f4dbe4f1b961918f1ff47f81d691f28cf18e64ea4",
+    "symbol": "DLF.NS",
+    "blocks": 29,
+    "pricing": "Hypothetical ATM European calls; IV proxy from preceding 60 log returns, frozen per block",
+    "limitations": "NOT a historical option-chain backtest. Adjusted prices are a total-return proxy, and dt=1/252 ignores calendar gaps. No actual contracts, strikes, expiries, quotes or borrow verified. Raw source prices not redistributed."
+  },
+  "hashes": {
+    "cost_sensitivity.csv": "52e2c40db57784b73b787ed109818eb7629d2501c1a287535b9833615b123b32",
+    "example_ledger.csv": "fd3e90291b30d5106c5aa72b968c0eb034c9b297eca590076425a0c62eeb5dc8",
+    "heldout_trials.csv": "80f0abfe2f52550f127a1a587b1ce832ad2dfba7aafeb9181a8331525e0839b8",
+    "historical_underlying_replay.csv": "5f2ac5e4808555a459b12329cd1e60ba94e0a93e011d1103a428b01fa26d786e"
+  }
+}
